@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- conjunto de metadados essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <!-- vínculo com arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <main> <!-- conteúdo principal da página -->
+        <header> <!-- cabeçalho do conteúdo principal -->
+            <h1>Quem está assistindo?</h1> <!-- título principal -->
+            <p>Escolha um perfil para continuar</p> <!-- subtítulo informativo -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro/claro">🌙</button>
+        </header>
+
+        <section class="profiles" aria-label="Perfis de usuário"> <!-- área com lista de perfis -->
+            <ul> <!-- lista não ordenada de categorias/etapas -->
+                <li>
+                    <ul> <!-- lista não ordenada de perfis dentro de item da lista -->
+                        <li>
+                            <a href="catalogo/catalogo.html?perfil=Ca" class="profile-link">
+                                <article class="profile" role="button" tabindex="0"> <!-- perfil clicável -->
+                                    <figure> <!-- conteúdo visual do perfil -->
+                                        <img src="assets/profile1.png"
+                                            alt="Ilustração de uma poderosa maga, com cabelos loiros com raízes escuras, vestindo uma armadura rúnica sombria com detalhes em azul brilhante e uma expressão de séria determinação">
+                                        <figcaption>Ca</figcaption> <!-- nome do perfil -->
+                                    </figure>
+                                </article>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalogo/catalogo.html?perfil=Gui" class="profile-link">
+                                <article class="profile" role="button" tabindex="0"> <!-- segundo perfil clicável -->
+                                    <figure>
+                                        <img src="assets/profile2.png"
+                                            alt="Ilustração de um guerreiro barbudo em uma armadura de metal escura e intrincada com runas azuis brilhantes, ambientado contra um fundo de nuvens místicas e raios de luz">
+                                        <figcaption>Gui</figcaption> <!-- nome do perfil -->
+                                    </figure>
+                                </article>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
