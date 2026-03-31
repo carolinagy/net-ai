@@ -1,0 +1,269 @@
+/* Estilo inspirado na Netflix */
+:root {
+    --bg: #141414;
+    /* cor de fundo principal escura */
+    --bg-panel: #181818;
+    /* cor de painéis e cards */
+    --text: #e5e5e5;
+    /* cor de texto principal */
+    --text-muted: #b3b3b3;
+    /* cor de texto secundário */
+    --accent: #e50914;
+    /* cor de destaque típica da Netflix */
+    --border: rgba(255, 255, 255, 0.15);
+    /* cor de borda suave */
+}
+
+[data-theme="light"] {
+    --bg: #f4f4f4;
+    --bg-panel: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --accent: #e50914;
+    --border: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] body {
+    background: radial-gradient(circle at 20% 0%, #f8f8f8 0%, #e8e8e8 45%);
+}
+
+[data-theme="light"] .profile {
+    background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.06));
+}
+
+body {
+    margin: 0;
+    /* remove margem padrão do navegador */
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    /* tipografia moderna e segura */
+    background: radial-gradient(circle at 20% 0%, #2a2a2a 0%, #141414 45%);
+    /* fundo degradê escuro */
+    color: var(--text);
+    /* aplica cor do texto definida em :root */
+    min-height: 100vh;
+    /* garante altura mínima para cobrir a viewport */
+    transition: background .3s ease, color .3s ease;
+}
+
+main {
+    max-width: 1100px;
+    /* largura máxima da área de conteúdo */
+    margin: 0 auto;
+    /* centraliza o main horizontalmente */
+    padding: 3rem 1.5rem;
+    /* espaçamento interno */
+    text-align: center;
+    /* centraliza texto dentro do main */
+}
+
+.theme-toggle {
+    border: 1px solid var(--border);
+    background: var(--bg-panel);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.theme-toggle {
+    position: absolute; /* posicionamento no canto */
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+* {
+    box-sizing: border-box;
+    /* inclui bordas e padding no tamanho do elemento */
+}
+
+body {
+    margin: 0;
+    /* remove margem padrão do navegador */
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    /* tipografia moderna e segura */
+    background: radial-gradient(circle at 20% 0%, #2a2a2a 0%, #141414 45%);
+    /* fundo degradê escuro */
+    color: var(--text);
+    /* aplica cor do texto definida em :root */
+    min-height: 100vh;
+    /* garante altura mínima para cobrir a viewport */
+}
+
+main {
+    max-width: 1100px;
+    /* largura máxima da área de conteúdo */
+    margin: 0 auto;
+    /* centraliza o main horizontalmente */
+    padding: 3rem 1.5rem;
+    /* espaçamento interno */
+    text-align: center;
+    /* centraliza texto dentro do main */
+}
+
+header {
+    position: relative; /* base para posicionamento do botão */
+    padding-top: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    /* remove margem padrão */
+    font-size: clamp(2rem, 4vw, 4rem);
+    /* tamanho responsivo do título */
+    letter-spacing: 0.08em;
+    /* espaçamento entre letrar ampliado */
+    color: var(--text);
+    /* texto baseado no tema */
+}
+
+header p {
+    margin: 0.8rem 0 0.8rem;
+    /* espaçamento vertical entre título e texto */
+    color: var(--text-muted);
+    /* cor de texto secundária */
+    font-size: 1.1rem;
+    /* tamanho de fonte legível */
+}
+
+.theme-toggle {
+    margin-top: 1rem; /* espaçamento opcional entre botão e título */
+}
+
+.profiles {
+    display: block; /* contêiner de seções e listas */
+    gap: 0;
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.profiles > ul,
+.profiles > ul > li > ul {
+    list-style: none; /* remove marcadores */
+    margin: 0;
+    padding: 0;
+}
+
+.profiles > ul > li > ul {
+    display: flex; /* perfis lado a lado */
+    flex-wrap: wrap; /* quebra na vertical se necessário */
+    justify-content: center; /* centraliza no horizontal */
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.profiles > ul > li > ul > li {
+    flex: 0 1 160px; /* tamanho fixo igual */
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(0, 0, 0, .25));
+    /* leve degradê no card */
+    border: 1px solid var(--border);
+    /* borda sutil */
+    border-radius: 10px;
+    /* cantos arredondados */
+    width: 100%;
+    /* ajusta-se à célula da grade */
+    max-width: 160px;
+    /* largura máxima do card */
+    padding: 0.8rem;
+    /* espaçamento interno */
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    /* animações suaves */
+    cursor: pointer;
+    /* indica que é clicável */
+}
+
+.profile:focus-visible,
+.profile:hover {
+    transform: translateY(-4px);
+    /* eleva o card */
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+    /* sombra maior no hover/focus */
+    border-color: rgba(255, 255, 255, 0.6);
+    /* cor de borda de destaque */
+    outline: none;
+    /* remove contorno padrão */
+}
+
+.profile figure {
+    margin: 0;
+    /* remove margem padrão */
+    width: 100%;
+    /* ocupa largura total do card */
+    aspect-ratio: 1 / 1;
+    /* mantém proporção quadrada */
+    border-radius: 8px;
+    /* cantos arredondados na imagem */
+    overflow: visible;
+    /* permite figcaption aparecer fora */
+}
+
+.profile img {
+    width: 100%;
+    /* ocupa a largura do container */
+    height: 100%;
+    /* ocupa a altura do container */
+    object-fit: cover;
+    /* imagem recortada proporcionalmente */
+    border-radius: 8px;
+    /* arredonda bordas da imagem */
+    display: block;
+    /* remove espaçamento abaixo da imagem */
+}
+
+.profile figcaption {
+    margin-top: 0.7rem;
+    /* espaço acima do texto do perfil */
+    color: var(--text);
+    /* cor do texto do perfil */
+    font-weight: 600;
+    /* negrito leve */
+    letter-spacing: .03em;
+    /* espaçamento entre letras */
+}
+
+.profile[role="button"] {
+    outline: none;
+    /* remove contorno padrão no foco para customizar */
+}
+
+.profile:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+    /* foco acessível no teclado */
+}
+
+.profiles ul,
+.profiles ol {
+    list-style: none; /* remove marcadores de lista */
+    margin: 0; /* remove margem padrão do browser */
+    padding: 0; /* remove padding padrão do browser */
+}
+
+@media (max-width: 500px) {
+    main {
+        padding: 2rem 1rem;
+        /* menos padding em telas pequenas */
+    }
+
+    .profile {
+        max-width: 140px;
+        /* card menor para dispositivos móveis */
+    }
+}
